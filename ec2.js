@@ -1,19 +1,13 @@
 const express = require("express");
 const http = require("http");
-const socketIo = require("socket.io");
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
-
-io.on("connection", (socket) => {
-  console.log("Socket.IO client connected on machine B");
-});
 
 app.use("/logs", express.json());
 
 app.post("/logs", (req, res) => {
-  const { level, message } = req.body;
-  console.log(`[${level}] Log from machine A: ${message}`);
+  const { timestamp, level, message } = req.body;
+  console.log(`${timestamp} [${level}] Log from machine: ${message}`);
   res.status(200).send("Log received");
 });
 
