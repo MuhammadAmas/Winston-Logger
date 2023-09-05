@@ -1,4 +1,4 @@
-# Morgan Logger with Socket.IO
+# Winston Logger 
 
 Effortlessly integrate Winston logger for real-time log monitoring across machines. Transmit logs instantly, customize formats, and centralize logging management. Ideal for distributed systems and monitoring applications.
 
